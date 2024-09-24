@@ -1,11 +1,32 @@
-# xf_sys
+/**
+ * @file xf_sys.h
+ * @author dotc (dotchan@qq.com)
+ * @brief
+ * @version 1.0
+ * @date 2023-11-03
+ *
+ * Copyright (c) 2023, CorAL. All rights reserved.
+ *
+ */
 
-在一些场景中，应用层需要直接调用一些底层暴露的函数。这部分函数一方面很难使用软件实现。另一方面，几乎所有sdk也有实现。于是这部分被总结成 xf_sys 库。
-该仓库依赖 xf_utils
+#ifndef __XF_SYS_H__
+#define __XF_SYS_H__
 
-##  xf_sys 库的函数
+/* ==================== [Includes] ========================================== */
 
-```c
+#include "xf_sys_config_internal.h"
+#include "xf_utils.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* ==================== [Defines] =========================================== */
+
+/* ==================== [Typedefs] ========================================== */
+
+/* ==================== [Global Prototypes] ================================= */
+
 /***
  * @brief 对接us级时间戳
  *
@@ -95,30 +116,11 @@ xf_us_t xf_sys_tick_to_us(xf_tick_t n_tick);
  */
 xf_tick_t xf_sys_us_to_tick(xf_us_t n_us);
 
-```
+/* ==================== [Macros] ============================================ */
 
-这部分通过对接底层的us级时间戳。实现了阻塞式delay等相关操作
+#ifdef __cplusplus
+}
+#endif
 
-```c
-/**
- * @brief 系统软件重启（需对接）
- * 
- */
-xf_sys_reset() 
 
-/**
- * @brief 打开系统中断（需对接）
- * 
- */
-xf_sys_interrupts_enable()
-
-/**
- * @brief 关闭系统中断（需对接）
- * 
- */
-xf_sys_interrupts_disable()
-
-```
-
-此外还有开关系统中断和软件重启等功能需要底层对接
-
+#endif //__XF_SYS_H__
