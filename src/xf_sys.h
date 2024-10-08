@@ -31,9 +31,8 @@ extern "C" {
 /**
  * @brief 软件系统重启
  * 
- * @return xf_err_t 返回 XF_OK 表示成功，否则表示失败
  */
-xf_err_t xf_sys_reboot(void);
+void xf_sys_reboot(void);
 
 /**
  * @brief 打开系统中断

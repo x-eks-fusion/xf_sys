@@ -27,9 +27,9 @@
 
 #if XF_SYS_REBOOT_WEAK_IS_ENABLE
 
-__weak xf_err_t xf_sys_reboot(void)
+__weak void xf_sys_reboot(void)
 {
-    return XF_ERR_NOT_SUPPORTED;
+    /* do nothing */
 }
 
 #endif
