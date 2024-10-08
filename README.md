@@ -1,7 +1,6 @@
 # xf_sys
 
 在一些场景中，应用层需要直接调用一些底层暴露的函数。这部分函数一方面很难使用软件实现。另一方面，几乎所有sdk也有实现。于是这部分被总结成 xf_sys 库。
-该仓库依赖 xf_utils
 
 ##  xf_sys 库的函数
 
@@ -110,15 +109,42 @@ xf_sys_reset()
  * @brief 打开系统中断（需对接）
  * 
  */
-xf_sys_interrupts_enable()
+xf_sys_interrupt_enable()
 
 /**
  * @brief 关闭系统中断（需对接）
  * 
  */
-xf_sys_interrupts_disable()
+xf_sys_interrupt_disable()
 
 ```
 
 此外还有开关系统中断和软件重启等功能需要底层对接
+
+
+```c
+/**
+ * @brief 开启看门狗
+ * 
+ * @return xf_err_t 返回 XF_OK 表示成功，否则表示失败
+ */
+xf_err_t xf_sys_watchdog_enable(void);
+
+/**
+ * @brief 关闭看门狗
+ * 
+ * @return xf_err_t 返回 XF_OK 表示成功，否则表示失败
+ */
+xf_err_t xf_sys_watchdog_disable(void);
+
+/**
+ * @brief 喂狗，防止看门狗超时叫
+ * 
+ * @return xf_err_t 返回 XF_OK 表示成功，否则表示失败
+ */
+xf_err_t xf_sys_watchdog_kick(void);
+
+```
+
+看门狗的相关操作也需要底层对接。
 
