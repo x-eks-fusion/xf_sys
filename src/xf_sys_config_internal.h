@@ -23,12 +23,6 @@ extern "C" {
 
 /* ==================== [Defines] =========================================== */
 
-#ifndef XF_TICK_TYPE
-#define XF_TICK_TYPE uint64_t
-#endif
-
-typedef XF_TICK_TYPE xf_tick_t;
-
 #ifndef XF_S_TYPE
 #define XF_S_TYPE uint64_t
 #endif

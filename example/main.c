@@ -3,29 +3,20 @@
 
 #include <stdio.h>
 #include <sys/time.h>
-#include <time.h>
 
 #define TAG "main"
-#include "unistd.h"
 
-xf_tick_t _port_xf_sys_get_tick(void)
+xf_us_t _port_xf_sys_get_us(void)
 {
-    xf_tick_t tick = 0;
-    uint32_t freq_ref = 1000 * 1000 * 1000;
-    struct timespec current_time;
-    clock_gettime(CLOCK_MONOTONIC, &current_time);
-
-    xf_tick_t tick_of_freq_ref = (xf_tick_t)(1000 * 1000 * 1000) / (xf_tick_t)freq_ref;
-    tick = (xf_tick_t)current_time.tv_nsec / (xf_tick_t)tick_of_freq_ref
-           + (xf_tick_t)current_time.tv_sec * (xf_tick_t)freq_ref;
-
-    return tick;
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return (tv.tv_sec * 1000000LL) + tv.tv_usec;
 }
 
 int main(void)
 {
     XF_LOGI(TAG, "<xf_sys test>");
-    xf_sys_time_init(1000 * 1000 * 1000, _port_xf_sys_get_tick);
+    xf_sys_time_init(_port_xf_sys_get_us);
 
     xf_ms_t ms_before = xf_sys_time_get_ms();
     xf_delay_ms(500);
