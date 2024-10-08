@@ -30,7 +30,7 @@ extern "C" {
 /***
  * @brief 对接us级时间戳
  *
- * @param freq: 基准频率
+ * @param get_us: us级时间戳获取函数
  * @return 错误码
  */
 xf_err_t xf_sys_time_init(xf_us_t (*get_us)(void));
@@ -52,9 +52,9 @@ xf_err_t xf_delay_ms(xf_ms_t n_ms);
 xf_err_t xf_delay_us(xf_us_t n_us);
 
 /**
- * @brief 延时到一个绝对的时间戳
+ * @brief 延时到一个绝对的 us 级时间戳
  *
- * @param tick 延时到的时间戳
+ * @param n_us 延时到的 us 级时间戳
  * @return xf_err_t 错误码
  */
 xf_err_t xf_delay_until(xf_us_t n_us);

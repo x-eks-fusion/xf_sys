@@ -1,17 +1,17 @@
 /**
- * @file xf_sys_watchdog.c
+ * @file xf_sys.c
  * @author cangyu (sky.kirto@qq.com)
- * @brief
+ * @brief 
  * @version 0.1
  * @date 2024-10-08
- *
+ * 
  * @copyright Copyright (c) 2024, CorAL. All rights reserved.
- *
+ * 
  */
 
 /* ==================== [Includes] ========================================== */
 
-#include "xf_sys_watchdog.h"
+#include "xf_sys.h"
 
 /* ==================== [Defines] =========================================== */
 
@@ -25,19 +25,23 @@
 
 /* ==================== [Global Functions] ================================== */
 
-#if XF_SYS_WATCHDOG_WEAK_IS_ENABLE
+#if XF_SYS_REBOOT_WEAK_IS_ENABLE
 
-__weak xf_err_t xf_sys_watchdog_enable(void)
+__weak xf_err_t xf_sys_reboot(void)
 {
     return XF_ERR_NOT_SUPPORTED;
 }
 
-__weak xf_err_t xf_sys_watchdog_disable(void)
+#endif
+
+#if XF_SYS_INTERRUPT_WEAK_IS_ENABLE
+
+__weak xf_err_t xf_sys_interrupt_enable(void)
 {
     return XF_ERR_NOT_SUPPORTED;
 }
 
-__weak xf_err_t xf_sys_watchdog_kick(void)
+__weak xf_err_t xf_sys_interrupt_disable(void)
 {
     return XF_ERR_NOT_SUPPORTED;
 }
