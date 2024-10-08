@@ -47,6 +47,11 @@ typedef XF_MS_TYPE xf_ms_t;
 
 typedef XF_US_TYPE xf_us_t;
 
+#if (!defined(XF_SYS_WATCHDOG_DEFAULT_ENABLE)) || (XF_SYS_WATCHDOG_DEFAULT_ENABLE)
+#   define XF_SYS_WATCHDOG_DEFAULT_IS_ENABLE     (1)
+#else
+#   define XF_SYS_WATCHDOG_DEFAULT_IS_ENABLE     (0)
+#endif
 /* ==================== [Typedefs] ========================================== */
 
 /* ==================== [Global Prototypes] ================================= */
@@ -55,7 +60,7 @@ typedef XF_US_TYPE xf_us_t;
 
 /**
  * @brief 系统软件重启（需对接）
- * 
+ *
  */
 #ifndef xf_sys_reset
 #define xf_sys_reset()      (void)0
@@ -63,18 +68,18 @@ typedef XF_US_TYPE xf_us_t;
 
 /**
  * @brief 打开系统中断（需对接）
- * 
+ *
  */
-#ifndef xf_sys_interrupts_enable
-#define xf_sys_interrupts_enable()      (void)0
+#ifndef xf_sys_interrupt_enable
+#define xf_sys_interrupt_enable()      (void)0
 #endif
 
 /**
  * @brief 关闭系统中断（需对接）
- * 
+ *
  */
-#ifndef xf_sys_interrupts_disable
-#define xf_sys_interrupts_disable()     (void)0
+#ifndef xf_sys_interrupt_disable
+#define xf_sys_interrupt_disable()     (void)0
 #endif
 
 #ifdef __cplusplus
