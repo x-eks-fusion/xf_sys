@@ -39,9 +39,13 @@ xf_err_t xf_sys_time_init(xf_us_t (*get_us)(void))
 
 xf_err_t xf_delay_ms(xf_ms_t n_ms)
 {
+    if (unlikely(s_get_us == NULL)) {
+        return XF_ERR_INVALID_PORT;
+    }
     if (unlikely(n_ms == 0)) {
         return XF_ERR_INVALID_ARG;
     }
+
     xf_us_t timeout_us = s_get_us();
 
     timeout_us += n_ms * 1000;
@@ -52,6 +56,9 @@ xf_err_t xf_delay_ms(xf_ms_t n_ms)
 
 xf_err_t xf_delay_us(xf_us_t n_us)
 {
+    if (unlikely(s_get_us == NULL)) {
+        return XF_ERR_INVALID_PORT;
+    }
     if (unlikely(n_us == 0)) {
         return XF_ERR_INVALID_ARG;
     }
@@ -66,6 +73,9 @@ xf_err_t xf_delay_us(xf_us_t n_us)
 
 xf_err_t xf_delay_until(xf_us_t n_us)
 {
+    if (unlikely(s_get_us == NULL)) {
+        return XF_ERR_INVALID_PORT;
+    }
     if (unlikely(n_us <= s_get_us())) {
         return XF_ERR_INVALID_ARG;
     }
@@ -77,16 +87,25 @@ xf_err_t xf_delay_until(xf_us_t n_us)
 
 xf_s_t xf_sys_time_get_s(void)
 {
+    if (unlikely(s_get_us == NULL)) {
+        return 0;
+    }
     return s_get_us() / 1000 / 1000;
 }
 
 xf_ms_t xf_sys_time_get_ms(void)
 {
+    if (unlikely(s_get_us == NULL)) {
+        return 0;
+    }
     return s_get_us() / 1000;
 }
 
 xf_us_t xf_sys_time_get_us(void)
 {
+    if (unlikely(s_get_us == NULL)) {
+        return 0;
+    }
     return s_get_us();
 }
 
