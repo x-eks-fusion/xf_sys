@@ -1,7 +1,7 @@
 /**
  * @file xf_sys_watchdog.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief
+ * @brief 看门狗控制接口。
  * @version 0.1
  * @date 2024-10-08
  *
@@ -16,6 +16,15 @@
 
 #include "xf_sys_config_internal.h"
 #include "xf_utils.h"
+
+/**
+ * @cond (XFAPI_USER || XFAPI_PORT)
+ * @ingroup group_xf_sys
+ * @defgroup group_xf_sys_watchdog watchdog
+ * @brief 看门狗控制接口。
+ * @endcond
+ * @{
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,5 +62,10 @@ xf_err_t xf_sys_watchdog_kick(void);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_sys_watchdog watchdog
+ * @}
+ */
 
 #endif // __XF_SYS_WATCHDOG_H__

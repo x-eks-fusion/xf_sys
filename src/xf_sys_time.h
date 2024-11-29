@@ -1,7 +1,7 @@
 /**
  * @file xf_sys_time.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief
+ * @brief 时间戳及精确延迟。
  * @version 0.1
  * @date 2024-10-08
  *
@@ -16,6 +16,15 @@
 
 #include "xf_sys_config_internal.h"
 #include "xf_utils.h"
+
+/**
+ * @cond (XFAPI_USER || XFAPI_PORT)
+ * @ingroup group_xf_sys
+ * @defgroup group_xf_sys_time time
+ * @brief 时间戳及精确延迟。
+ * @endcond
+ * @{
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -86,5 +95,10 @@ xf_us_t xf_sys_time_get_us(void);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_sys_time time
+ * @}
+ */
 
 #endif // __XF_SYS_TIME_H__
