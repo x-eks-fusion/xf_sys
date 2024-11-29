@@ -1,12 +1,12 @@
 /**
  * @file xf_sys.c
  * @author cangyu (sky.kirto@qq.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2024-10-08
- * 
+ *
  * @copyright Copyright (c) 2024, CorAL. All rights reserved.
- * 
+ *
  */
 
 /* ==================== [Includes] ========================================== */

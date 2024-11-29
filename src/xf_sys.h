@@ -30,7 +30,7 @@ extern "C" {
 
 /**
  * @brief 软件系统重启
- * 
+ *
  */
 void xf_sys_reboot(void);
 
@@ -43,7 +43,7 @@ xf_err_t xf_sys_interrupt_enable(void);
 
 /**
  * @brief 关闭系统中断
- * 
+ *
  * @return xf_err_t 返回 XF_OK 表示成功，否则表示失败
  */
 xf_err_t xf_sys_interrupt_disable(void);
