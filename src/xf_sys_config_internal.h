@@ -69,5 +69,4 @@ typedef XF_US_TYPE xf_us_t;
 }
 #endif
 
-
 #endif //__XF_SYS_CONFIG_INTERNAL_H__
