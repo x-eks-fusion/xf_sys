@@ -31,23 +31,23 @@ extern "C" {
  * @brief 对接us级时间戳
  *
  * @param get_us: us级时间戳获取函数
- * @return 错误码
+ * @return xf_err_t 见 @ref xf_err_t.
  */
 xf_err_t xf_sys_time_init(xf_us_t (*get_us)(void));
 
 /**
  * @brief 毫秒级延时
  *
- * @param ms 需要延时的毫秒数
- * @return 错误码
+ * @param n_ms 需要延时的毫秒数
+ * @return xf_err_t 见 @ref xf_err_t.
  */
 xf_err_t xf_delay_ms(xf_ms_t n_ms);
 
 /**
  * @brief 微秒级延时
  *
- * @param ms 需要延时的微秒数
- * @return 错误码
+ * @param n_us 需要延时的微秒数
+ * @return xf_err_t 见 @ref xf_err_t.
  */
 xf_err_t xf_delay_us(xf_us_t n_us);
 
@@ -55,7 +55,7 @@ xf_err_t xf_delay_us(xf_us_t n_us);
  * @brief 延时到一个绝对的 us 级时间戳
  *
  * @param n_us 延时到的 us 级时间戳
- * @return xf_err_t 错误码
+ * @return xf_err_t 见 @ref xf_err_t.
  */
 xf_err_t xf_delay_until(xf_us_t n_us);
 
