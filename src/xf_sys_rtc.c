@@ -29,22 +29,22 @@
 
 __weak xf_err_t xf_sys_rtc_init(void)
 {
-
+    return XF_ERR_NOT_SUPPORTED;
 }
 
 __weak xf_err_t xf_sys_rtc_deinit(void)
 {
-
+    return XF_ERR_NOT_SUPPORTED;
 }
 
 __weak uint64_t xf_sys_get_rtc_count(void)
 {
-
+    return 0;
 }
 
 __weak xf_err_t xf_sys_set_rtc_count(uint64_t count)
 {
-
+    return XF_ERR_NOT_SUPPORTED;
 }
 
 #endif
