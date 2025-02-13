@@ -59,6 +59,18 @@ typedef XF_US_TYPE xf_us_t;
 #   define XF_SYS_INTERRUPT_WEAK_IS_ENABLE     (0)
 #endif
 
+#if (!defined(XF_SYS_CPU_WEAK_ENABLE)) || (XF_SYS_CPU_WEAK_ENABLE)
+#   define XF_SYS_CPU_WEAK_IS_ENABLE     (1)
+#else
+#   define XF_SYS_CPU_WEAK_IS_ENABLE     (0)
+#endif
+
+#if (!defined(XF_SYS_RTC_WEAK_ENABLE)) || (XF_SYS_RTC_WEAK_ENABLE)
+#   define XF_SYS_RTC_WEAK_IS_ENABLE     (1)
+#else
+#   define XF_SYS_RTC_WEAK_IS_ENABLE     (0)
+#endif
+
 /* ==================== [Typedefs] ========================================== */
 
 /* ==================== [Global Prototypes] ================================= */
