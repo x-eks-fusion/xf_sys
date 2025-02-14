@@ -25,6 +25,7 @@
 #include "xf_sys_time.h"
 #include "xf_sys_watchdog.h"
 #include "xf_sys_cpu.h"
+#include "xf_sys_rtc.h"
 
 /**
  * @cond (XFAPI_USER || XFAPI_PORT)
